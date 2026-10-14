@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.ui.MainController">
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT">
+            <padding><Insets top="14" right="20" bottom="14" left="20"/></padding>
+            <Label text="Clinic Records System" styleClass="app-title"/>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Appointments">
+                <fx:include source="appointments.fxml"/>
+            </Tab>
+            <Tab text="Patients">
+                <fx:include source="patients.fxml"/>
+            </Tab>
+            <Tab text="Doctors">
+                <fx:include source="doctors.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

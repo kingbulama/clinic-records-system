@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="app.ui.PatientsController" dividerPositions="0.38">
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Register Patient" styleClass="section-title"/>
+        <Label text="Full name *"/>
+        <TextField fx:id="nameField" promptText="e.g. John Adeyemi"/>
+        <Label text="Date of birth"/>
+        <DatePicker fx:id="dobPicker" maxWidth="Infinity"/>
+        <Label text="Phone"/>
+        <TextField fx:id="phoneField"/>
+        <Label text="Email"/>
+        <TextField fx:id="emailField"/>
+        <Button text="Register" onAction="#onRegister" maxWidth="Infinity" styleClass="primary-button"/>
+        <Label fx:id="registerMessage" wrapText="true" styleClass="message"/>
+
+        <Separator/>
+        <Label text="Add Medical Record" styleClass="section-title"/>
+        <Label text="Diagnosis"/>
+        <TextField fx:id="diagnosisField"/>
+        <Label text="Notes"/>
+        <TextArea fx:id="notesArea" prefRowCount="3"/>
+        <Button text="Add to Selected Patient" onAction="#onAddRecord" maxWidth="Infinity"/>
+        <Label fx:id="recordMessage" wrapText="true" styleClass="message"/>
+    </VBox>
+
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Patients" styleClass="section-title"/>
+        <HBox spacing="8">
+            <TextField fx:id="searchField" promptText="Search by name" HBox.hgrow="ALWAYS"/>
+            <Button text="Search" onAction="#onSearch"/>
+        </HBox>
+        <ListView fx:id="patientsList" VBox.vgrow="ALWAYS"/>
+        <Label text="Medical History" styleClass="section-title"/>
+        <TextArea fx:id="historyArea" editable="false" prefRowCount="8" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</SplitPane>

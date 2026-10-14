@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="app.ui.DoctorsController" dividerPositions="0.38">
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Add Doctor" styleClass="section-title"/>
+        <Label text="Full name *"/>
+        <TextField fx:id="nameField" promptText="e.g. Dr. Amina Bello"/>
+        <Label text="Specialty *"/>
+        <TextField fx:id="specialtyField" promptText="e.g. Cardiology"/>
+        <Button text="Add" onAction="#onAdd" maxWidth="Infinity" styleClass="primary-button"/>
+        <Label fx:id="message" wrapText="true" styleClass="message"/>
+        <Separator/>
+        <Label text="Doctors" styleClass="section-title"/>
+        <ListView fx:id="doctorsList" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Availability / Schedule" styleClass="section-title"/>
+        <TableView fx:id="scheduleTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colPatient" text="Patient"/>
+                <TableColumn fx:id="colStart" text="Start"/>
+                <TableColumn fx:id="colEnd" text="End"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
+            </columns>
+        </TableView>
+    </VBox>
+</SplitPane>

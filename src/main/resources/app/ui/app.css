@@ -1,0 +1,380 @@
+/* Clinic Records System - JavaFX stylesheet
+   Pure CSS: no FXML or Java changes needed. Keeps the existing class names.
+   Palette: deep teal #0f766e (primary), ink #1f2d27, canvas #eef2f0, line #dbe5e0 */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-font-size: 13px;
+    -fx-base: #f3f6f5;
+    -fx-background: #eef2f0;
+    -fx-accent: #0f766e;
+    -fx-focus-color: #0f766e;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: #1f2d27;
+}
+
+/* ---------- Header ---------- */
+.header {
+    -fx-background-color: linear-gradient(to right, #0b3b34, #0f5f58);
+    -fx-border-color: transparent transparent #5eead4 transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Tabs ---------- */
+.tab-pane {
+    -fx-tab-min-height: 42px;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-padding: 0 0 0 14;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(15, 40, 34, 0.10), 6, 0, 0, 1);
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 20 0 20;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #f1f7f5;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-border-color: transparent transparent #0f766e transparent;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #5b6b64;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #0b3b34;
+}
+
+.tab:focused > .tab-container > .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: #eef2f0;
+}
+
+/* ---------- Split layout and cards ---------- */
+.split-pane {
+    -fx-background-color: #eef2f0;
+    -fx-padding: 14;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-padding: 0 6 0 6;
+}
+
+.panel {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #dbe5e0;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(15, 40, 34, 0.08), 10, 0, 0, 2);
+}
+
+.panel .label {
+    -fx-text-fill: #43524b;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+}
+
+.panel .section-title {
+    -fx-text-fill: #0b3b34;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 0;
+}
+
+/* ---------- Inputs ---------- */
+.text-field,
+.text-area .content,
+.combo-box-base,
+.date-picker {
+    -fx-background-color: #fbfcfc;
+    -fx-background-radius: 8;
+    -fx-border-color: #cdd9d3;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.text-field {
+    -fx-padding: 8 10;
+    -fx-prompt-text-fill: #94a39c;
+}
+
+.combo-box-base,
+.date-picker {
+    -fx-padding: 2 0 2 0;
+}
+
+.combo-box-base > .arrow-button,
+.date-picker > .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box-base > .arrow-button > .arrow,
+.date-picker > .arrow-button > .arrow {
+    -fx-background-color: #5b6b64;
+}
+
+.combo-box > .list-cell,
+.combo-box-base > .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 5 10;
+}
+
+.text-field:focused,
+.combo-box-base:focused,
+.date-picker:focused {
+    -fx-background-color: white;
+    -fx-border-color: #0f766e;
+    -fx-effect: dropshadow(gaussian, rgba(15, 118, 110, 0.25), 6, 0, 0, 0);
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #cdd9d3;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(15, 40, 34, 0.18), 12, 0, 0, 4);
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 8 12;
+    -fx-text-fill: #1f2d27;
+}
+
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #e6f4f1;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #0f766e;
+    -fx-text-fill: white;
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #cdd9d3;
+    -fx-border-radius: 8;
+    -fx-text-fill: #1f2d27;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #eef6f4;
+    -fx-border-color: #0f766e;
+}
+
+.button:pressed {
+    -fx-background-color: #dcefea;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #138a80, #0f766e);
+    -fx-background-radius: 8;
+    -fx-border-color: #0b5f58;
+    -fx-text-fill: white;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 118, 110, 0.30), 6, 0, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #0f766e, #0b5f58);
+    -fx-border-color: #0b5f58;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #0b5f58;
+}
+
+.danger-button {
+    -fx-background-color: white;
+    -fx-border-color: #b91c1c;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #b91c1c;
+}
+
+.danger-button:hover {
+    -fx-background-color: #b91c1c;
+    -fx-border-color: #b91c1c;
+    -fx-text-fill: white;
+}
+
+.danger-button:pressed {
+    -fx-background-color: #991b1b;
+    -fx-border-color: #991b1b;
+    -fx-text-fill: white;
+}
+
+/* ---------- Messages ---------- */
+.message {
+    -fx-wrap-text: true;
+    -fx-font-size: 12.5px;
+}
+
+.panel .message.error {
+    -fx-text-fill: #b91c1c;
+}
+
+.panel .message.ok {
+    -fx-text-fill: #0f766e;
+}
+
+/* ---------- Tables and lists ---------- */
+.table-view,
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #dbe5e0;
+    -fx-border-radius: 8;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background,
+.table-view .filler {
+    -fx-background-color: #f1f5f3;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #dbe5e0 transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #33433c;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 6;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 40px;
+    -fx-border-color: transparent transparent #eef2f0 transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #fafcfb;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #eaf5f2;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #cfeee8;
+}
+
+.table-cell {
+    -fx-padding: 0 8 0 8;
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #1f2d27;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #08302b;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #8a9a92;
+    -fx-font-size: 13px;
+}
+
+.list-cell {
+    -fx-padding: 9 12;
+    -fx-text-fill: #1f2d27;
+    -fx-background-color: white;
+}
+
+.list-cell:odd {
+    -fx-background-color: #fafcfb;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #eaf5f2;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #cfeee8;
+    -fx-text-fill: #08302b;
+}
+
+/* ---------- Scrollbars ---------- */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #c3d0ca;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar > .thumb:hover {
+    -fx-background-color: #9fb2aa;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-padding: 0;
+}
+
+.scroll-bar > .increment-button > .increment-arrow,
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-padding: 0;
+    -fx-shape: " ";
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 10;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 10;
+}
+
+/* ---------- Polish pass ---------- */
+.table-row-cell:empty {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #f6fbfa;
+}
+
+.button:focused,
+.primary-button:focused {
+    -fx-background-insets: 0;
+}

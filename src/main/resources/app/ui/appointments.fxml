@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="app.ui.AppointmentsController" dividerPositions="0.38">
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Book Appointment" styleClass="section-title"/>
+
+        <Label text="Patient *"/>
+        <ComboBox fx:id="patientCombo" maxWidth="Infinity" promptText="Select patient"/>
+        <Label text="Doctor *"/>
+        <ComboBox fx:id="doctorCombo" maxWidth="Infinity" promptText="Select doctor"/>
+        <Label text="Date *"/>
+        <DatePicker fx:id="datePicker" maxWidth="Infinity"/>
+        <HBox spacing="8">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Start *"/>
+                <TextField fx:id="startField" promptText="09:00"/>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="End *"/>
+                <TextField fx:id="endField" promptText="09:30"/>
+            </VBox>
+        </HBox>
+        <Label text="Reason"/>
+        <TextField fx:id="reasonField" promptText="e.g. Check-up"/>
+        <Button text="Book" onAction="#onBook" maxWidth="Infinity" styleClass="primary-button"/>
+        <Label fx:id="bookingMessage" wrapText="true" styleClass="message"/>
+    </VBox>
+
+    <VBox spacing="10" styleClass="panel">
+        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+        <Label text="Search Appointments" styleClass="section-title"/>
+        <HBox spacing="8">
+            <TextField fx:id="searchPatientField" promptText="Patient name" HBox.hgrow="ALWAYS"/>
+            <ComboBox fx:id="searchDoctorCombo" promptText="Any doctor" HBox.hgrow="ALWAYS"/>
+            <ComboBox fx:id="searchStatusCombo" promptText="Any status" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox spacing="8">
+            <DatePicker fx:id="fromDate" promptText="From date" HBox.hgrow="ALWAYS"/>
+            <DatePicker fx:id="toDate" promptText="To date" HBox.hgrow="ALWAYS"/>
+            <Button text="Search" onAction="#onSearch"/>
+            <Button text="Clear" onAction="#onClearSearch"/>
+        </HBox>
+        <Label fx:id="searchMessage" wrapText="true" styleClass="message"/>
+        <TableView fx:id="appointmentsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colPatient" text="Patient"/>
+                <TableColumn fx:id="colDoctor" text="Doctor"/>
+                <TableColumn fx:id="colStart" text="Start"/>
+                <TableColumn fx:id="colEnd" text="End"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
+                <TableColumn fx:id="colReason" text="Reason"/>
+            </columns>
+        </TableView>
+        <HBox spacing="8">
+            <Button text="Mark Completed" onAction="#onComplete"/>
+            <Button text="Cancel Appointment" onAction="#onCancel" styleClass="danger-button"/>
+        </HBox>
+    </VBox>
+</SplitPane>
