@@ -1,4 +1,5 @@
-
 target/
-apache-maven-/
-.zip
+*.db
+*.zip
+apache-maven*/
+.vscode/
