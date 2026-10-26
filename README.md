@@ -33,7 +33,7 @@ schedules, appointment booking, and medical histories.
 
 ## Requirements
 
-- JDK 25+
+- JDK 17+
 - Maven 3.8+
 
 ## Run
