@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 /**
  * Owns the JDBC connection factory and schema bootstrap.
@@ -17,9 +18,21 @@ import java.sql.Statement;
 public final class Database {
 
     private static final String DEFAULT_URL = "jdbc:sqlite:clinic.db";
-    private static String url = DEFAULT_URL;
+    private static String url = loadUrl();
 
     private Database() {
+    }
+        /** Reads db.url from config.properties; falls back to the default if absent. */
+    private static String loadUrl() {
+        Properties p = new Properties();
+        try (InputStream in = Database.class.getResourceAsStream("/config.properties")) {
+            if (in != null) {
+                p.load(in);
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot read config.properties", e);
+        }
+        return p.getProperty("db.url", DEFAULT_URL);
     }
 
     /** Point the app at another database (used by tests with in-memory DBs). */
