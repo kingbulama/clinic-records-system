@@ -1,6 +1,6 @@
 # SRS: Use Cases (Bulama)
 
-## UC-1: Book an appointment.
+## UC-1: Book an appointment
 - **Actor:** Receptionist
 - **Goal:** Book a patient with a doctor at a chosen time
 - **Preconditions:** Patient is registered; doctor exists
@@ -13,7 +13,7 @@
 - **Alternative flow:** The slot overlaps another booking, so the system rejects it and shows a message.
 - **Postcondition:** Appointment and intake record are saved, or neither is.
 
-## UC-2: View a patient's medical history.
+## UC-2: View a patient's medical history
 - **Actor:** Receptionist
 - **Goal:** Look up a patient's past visits and records
 - **Preconditions:** The patient is already registered
